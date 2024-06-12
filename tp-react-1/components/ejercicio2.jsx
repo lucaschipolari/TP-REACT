@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export const Ejercicio2 = ({mensaje}) => {
-  return (
-    <div>Hola {mensaje}!</div>
-  )
-}
+export const Ejercicio2 = ({ mensaje }) => {
+  return <div>Hola {mensaje}!</div>;
+};
