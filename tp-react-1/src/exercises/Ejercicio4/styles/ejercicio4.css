@@ -1,0 +1,17 @@
+.task-list {
+    list-style-type: none; 
+    padding-left: 0;       
+  }
+  
+  .task-list li {
+    display: flex;
+    justify-content: center; 
+    padding: 8px 0; 
+  }
+  
+  .task-list button {
+    background-color: transparent; 
+    border: none;                
+    color: red;                   
+    cursor: pointer;               
+  }

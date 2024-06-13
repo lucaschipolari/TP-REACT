@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Ejercicio1 } from "../components/ejercicio1";
+import { Ejercicio1 } from "./exercises/Ejercicio1/ejercicio1";
 import "./App.css";
-import { Ejercicio2 } from "../components/ejercicio2";
-import { Ejercicio3 } from "../components/ejercicio3";
-import { Ejercicio4 } from "../components/ejercicio4";
+import { Ejercicio2 } from "./exercises/Ejercicio2/ejercicio2";
+import { Ejercicio3 } from "./exercises/Ejercicio3/ejercicio3";
+import { Ejercicio4 } from "./exercises/Ejercicio4/ejercicio4";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       {/* <Ejercicio1/> */}
       {/* <Ejercicio2 mensaje='My Friend'/> */}
       {/* <Ejercicio3 msj='My Friend' /> */}
-      <Ejercicio4 />
+      {/* <Ejercicio4 /> */}
     </>
   );
 }
