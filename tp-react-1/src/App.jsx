@@ -8,6 +8,7 @@ import { Ejercicio4 } from "./exercises/Ejercicio4/ejercicio4";
 function App() {
   return (
     <>
+    
       {/* <Ejercicio1/> */}
       {/* <Ejercicio2 mensaje='My Friend'/> */}
       {/* <Ejercicio3 msj='My Friend' /> */}

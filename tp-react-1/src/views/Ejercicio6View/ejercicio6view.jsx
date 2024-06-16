@@ -1,21 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import { FormColor } from '../../exercises/Ejercicio6/ejercicio6FormColor'
-import { CardColor } from '../../exercises/Ejercicio6/ejercicio6CardColor'
+import { useEffect, useState } from 'react';
+import ColorList from '../../exercises/Ejercicio6/ColorList';
+import ColorForm from '../../exercises/Ejercicio6/ColorForm';
 
-const colorLS = JSON.parse(localStorage.getItem('color')) || [];
 
-export const Ejercicio6View = () => {
-    const [colores, setColores] = useState(colorLS);
 
-    useEffect(() => {
-      localStorage.setItem('color', JSON.stringify(colores));
-    }, [colores])
+const colorsLS = JSON.parse(localStorage.getItem('colors')) || [];
+
+const Ejercicio6View = () => {
+  const [colors, setColors] = useState(colorsLS);
+
+  // Ejecutar cada vez que cambie colors
+  useEffect(() => {
+    localStorage.setItem('colors', JSON.stringify(colors));
+  }, [colors]);
 
   return (
-    <>
-        <FormColor colores={colores} setColores={setColores}/>
-        <CardColor/>
-    
-    </>
-  )
-}
+    <div className='w-100'>
+      <ColorForm setColors={setColors} />
+      <ColorList colors={colors} setColors={setColors} />
+    </div>
+  );
+};
+export default Ejercicio6View;
