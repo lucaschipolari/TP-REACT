@@ -18,6 +18,7 @@ export const MyNavbar = () => {
           <NavDropdown.Item href="/ejercicio2">Ejercicio 2</NavDropdown.Item>
           <NavDropdown.Item href="/ejercicio3">Ejercicio 3</NavDropdown.Item>
           <NavDropdown.Item href="/ejercicio4">Ejercicio 4</NavDropdown.Item>
+          <NavDropdown.Item href="/ejercicio6">Ejercicio 6</NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
