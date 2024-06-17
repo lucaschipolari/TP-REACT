@@ -4,6 +4,7 @@ import { Ejercicio4Row } from './ejercicio4Row';
 export const Ejercicio4Table = (props) => {
     const {tasks,setTasks}=props;
     const handleDelete = (id) => {
+       
         setTasks(tasks.filter((task) => task.id!==id));
     }
   return (
