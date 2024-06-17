@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './styles/footer.css'
 export const Footer = () => {
   return (
-    <>
      <footer className="footer bg-dark text-white py-4">
       <Container>
         <Row>
@@ -36,6 +35,5 @@ export const Footer = () => {
         </Row>
       </Container>
     </footer>
-    </>
   )
 }
