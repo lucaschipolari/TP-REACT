@@ -6,7 +6,7 @@ const CardCita = (props) => {
     const {cita,setCitas} = props;
     const handleDelete = () => {
         setCitas((prevCitas) =>
-            prevCitas.filter((prevCita) => prevCita.id !== color.id)
+            prevCitas.filter((prevCita) => prevCita.id !== cita.id)
           );
     }
   return (

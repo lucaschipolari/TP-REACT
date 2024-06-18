@@ -13,6 +13,7 @@ const FormularioVet = (props) => {
     const $inputHora = useRef();
     const $inputSintomas = useRef();
     const handleSubmit = (e) => {
+        e.preventDefault();
         
         if ( !validateMascota($inputMascota.current) || !validateNombre($inputNombre.current) || !validateFecha($inputFecha.current) || !validateHora($inputHora.current) || !validateSintomas($inputSintomas.current) ){
             return;

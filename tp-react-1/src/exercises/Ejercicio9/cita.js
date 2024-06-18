@@ -5,5 +5,6 @@ export class Cita{
         this.mascota = mascota;
         this.dueño = dueño;
         this.sintomas = sintomas;
+        this.id = window.self.crypto.randomUUID();
     }
 }
