@@ -7,6 +7,7 @@ import { Ejercicio4View } from "../views/Ejercicio4View/ejercicio4view";
 import Ejercicio6View from "../views/Ejercicio6View/ejercicio6view";
 import { Ejercicio7View } from "../views/Ejercicio7View/ejercicio7View";
 import Ejercicio8View from "../views/Ejercicio8View/ejercicio8View";
+import { Ejercicio9View } from "../views/Ejercicio9View/ejercicio9View";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       { path: "/ejercicio6", element: <Ejercicio6View /> },
       { path: "/ejercicio7", element: <Ejercicio7View /> },
       { path: "/ejercicio8", element: <Ejercicio8View /> },
+      { path: "/ejercicio9", element: <Ejercicio9View /> },
+    //  { path: "/ejercicio10", element: <Ejercicio10View /> },
+      //{ path: "/ejercicio11", element: <Ejercicio11View /> },
+     // { path: "/ejercicio12", element: <Ejercicio12View /> },
     ],
   },
 ]);
