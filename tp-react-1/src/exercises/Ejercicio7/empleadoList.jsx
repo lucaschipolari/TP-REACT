@@ -3,15 +3,15 @@ import EmpleadoRow from './empleadoRow';
 
 const EmpleadoList = () => {
     const empleadosList = [
-        { id: 1, fullName: "Laya Dueñas", title: "CEO", department: "Business", pic: "empleado01.png" },
-        { id: 2, fullName: "Astryd Vallés", title: "CMO", department: "Marketing", pic: "empleado02.png" },
-        { id: 3, fullName: "Shantell Meza", title: "CFO", department: "Business", pic: "empleado03.png" },
-        { id: 4, fullName: "Sergio Ocampo", title: "CTO", department: "Engineering", pic: "empleado04.png" },
-        { id: 5, fullName: "Ares Jiménez", title: "Art Director", department: "Marketing", pic: "empleado05.png" },
-        { id: 6, fullName: "Marta Pérez", title: "Frontend Dev", department: "Engineering", pic: "empleado06.png" },
-        { id: 7, fullName: "Ellen Balderas", title: "Digital Strategist", department: "Marketing", pic: "empleado07.png" },
-        { id: 8, fullName: "Cynthia Valentín", title: "Backend Dev", department: "Engineering", pic: "empleado08.png" },
-        { id: 9, fullName: "Bernard Jung", title: "DevOps Engineer", department: "Engineering", pic: "empleado09.png" },
+        { id: 1, fullName: "Laya Dueñas", title: "CEO", department: "Business", pic: "https://th.bing.com/th/id/OIP.MruMdqmeGnZ6nrlmp5VcbgAAAA?rs=1&pid=ImgDetMain" },
+        { id: 2, fullName: "Astryd Vallés", title: "CMO", department: "Marketing", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 3, fullName: "Shantell Meza", title: "CFO", department: "Business", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 4, fullName: "Sergio Ocampo", title: "CTO", department: "Engineering", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 5, fullName: "Ares Jiménez", title: "Art Director", department: "Marketing", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 6, fullName: "Marta Pérez", title: "Frontend Dev", department: "Engineering", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 7, fullName: "Ellen Balderas", title: "Digital Strategist", department: "Marketing", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 8, fullName: "Cynthia Valentín", title: "Backend Dev", department: "Engineering", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
+        { id: 9, fullName: "Bernard Jung", title: "DevOps Engineer", department: "Engineering", pic: "https://1.bp.blogspot.com/-iQV_poOyuIE/VeBuCZ0AUHI/AAAAAAAABaI/Fmd6XXuvrnA/s1600/goku.png" },
       ];
 
     const handleDelete = (id) => {
@@ -19,11 +19,14 @@ const EmpleadoList = () => {
     };
       
   return (
-    <div>
+    <div className="container">
+
+    <div className='d-flex justify-content-center flex-column align-items-center'>
         {empleadosList.map((empleado) => (
-                <EmpleadoRow key={empleado.id} empleado={empleado} handleDelete={handleDelete} />
+          <EmpleadoRow key={empleado.id} empleado={empleado} handleDelete={handleDelete} />
         ))}
     </div>
+        </div>
   )
 }
 
