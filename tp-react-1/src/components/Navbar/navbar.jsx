@@ -3,9 +3,9 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-boots
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkull } from '@fortawesome/free-solid-svg-icons';
 
-export const MyNavbar = () => {
+export const NavbarMain = () => {
   return (
-    <>
+  
     <Navbar bg="dark" variant="dark" expand="lg">
     <Navbar.Brand href="#home" className='mx-2'>
       <FontAwesomeIcon icon={faSkull} /> TP chipo
@@ -19,10 +19,11 @@ export const MyNavbar = () => {
           <NavDropdown.Item href="/ejercicio3">Ejercicio 3</NavDropdown.Item>
           <NavDropdown.Item href="/ejercicio4">Ejercicio 4</NavDropdown.Item>
           <NavDropdown.Item href="/ejercicio6">Ejercicio 6</NavDropdown.Item>
+          <NavDropdown.Item href="/ejercicio7">Ejercicio 7</NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
-    </>
+   
   )
 }

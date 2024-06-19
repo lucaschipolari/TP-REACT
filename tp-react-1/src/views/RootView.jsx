@@ -1,15 +1,15 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import {MyNavbar} from '../components/Navbar/navbar';
+import {NavbarMain} from '../components/Navbar/navbar';
 import { Footer } from '../components/Footer/footer';
 
 const RootView = () => {
   return (
     <> 
     <header >
-     <MyNavbar/>
+     <NavbarMain/>
     </header>
-    <main className='text-center'>
+    <main>
         <Outlet/>
     </main>
     <Footer/>
