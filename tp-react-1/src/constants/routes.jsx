@@ -9,7 +9,7 @@ import { Ejercicio7View } from "../views/Ejercicio7View/ejercicio7View";
 import Ejercicio8View from "../views/Ejercicio8View/ejercicio8View";
 import { Ejercicio9View } from "../views/Ejercicio9View/ejercicio9View";
 import Ejercicio10View from "../views/Ejercicio10View/ejercicio10View";
-import { Ejercicio11View } from "../views/Ejercicio11View/ejercicio11View";
+import  Ejercicio11View  from "../views/Ejercicio11View/ejercicio11View";
 export const router = createBrowserRouter([
   {
     path: "/",

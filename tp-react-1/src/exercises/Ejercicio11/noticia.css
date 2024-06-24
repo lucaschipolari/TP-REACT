@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: space-between;
     height: 600px;
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
   
   .card-img-top {
