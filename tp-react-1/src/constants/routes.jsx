@@ -11,6 +11,7 @@ import { Ejercicio9View } from "../views/Ejercicio9View/ejercicio9View";
 import Ejercicio10View from "../views/Ejercicio10View/ejercicio10View";
 import Ejercicio11View from "../views/Ejercicio11View/ejercicio11View";
 import Ejercicio13View from "../views/Ejercicio13View/ejercicio13View";
+import Ejercicio14View from "../views/Ejercicio14View/Ejercicio14View";
 export const router = createBrowserRouter([
   {
     path: "/",

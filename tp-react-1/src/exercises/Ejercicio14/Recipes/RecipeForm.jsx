@@ -1,11 +1,12 @@
-import PropTypes from "prop-types";
-import Input from "../ui/Input/Input";
+import PropTypes, { string } from "prop-types";
+import InputFormat from "../ui/InputFormat";
 
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { postRecipeFn, putRecipeFn } from "../../api/recipes";
+import { postRecipeFn, putRecipeFn } from "../api/recipes";
 import { toast } from "sonner";
-import { useRecipes } from "../../stores/useRecipes";
+import { useRecipes } from "../stores/recipes";
+import RecipeList from "./RecipeList";
 
 const RecipeForm = () => {
   const {
@@ -77,7 +78,7 @@ const RecipeForm = () => {
       <form onSubmit={onSubmitRHF(handleSubmit)}>
         <h2>Añadir Recetas</h2>
 
-        <Input
+        <InputFormat
           className="my-2"
           name="name"
           label="Recipe Name"
@@ -98,7 +99,7 @@ const RecipeForm = () => {
             },
           }}
         />
-        <Input
+        <InputFormat
           className="my-2"
           name="instructions"
           label="Instructions"
@@ -119,7 +120,7 @@ const RecipeForm = () => {
             },
           }}
         />
-        <Input
+        <InputFormat
           className="my-2"
           name="tiempoTotElaboracion"
           label="Tiempo de elaboración"
@@ -134,7 +135,7 @@ const RecipeForm = () => {
           type="time"
         />
 
-        <Input
+        <InputFormat
           className="my-2"
           name="ingredients"
           label="Ingredientes"
@@ -165,15 +166,11 @@ const RecipeForm = () => {
           </button>
         </div>
       </form>
+      <div>
+        <RecipeList />
+      </div>
     </div>
   );
-};
-
-RecipeForm.propTypes = {
-  recipes: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setRecipes: PropTypes.func.isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setIngredients: PropTypes.func.isRequired,
 };
 
 export default RecipeForm;

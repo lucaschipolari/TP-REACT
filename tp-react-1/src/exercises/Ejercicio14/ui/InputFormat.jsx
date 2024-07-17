@@ -1,7 +1,6 @@
-import "./input.css";
 import PropTypes from "prop-types";
 
-const Input = (props) => {
+const InputFormat = (props) => {
   const {
     name,
     type = "text",
@@ -30,7 +29,7 @@ const Input = (props) => {
   );
 };
 
-Input.propTypes = {
+InputFormat.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -43,4 +42,4 @@ Input.propTypes = {
   placeholder: PropTypes.string,
 };
 
-export default Input;
+export default InputFormat;

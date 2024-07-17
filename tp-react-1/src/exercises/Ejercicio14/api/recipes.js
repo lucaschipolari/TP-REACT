@@ -48,10 +48,18 @@ export const putRecipeFn = async ({ idRecipe, data }) => {
 };
 
 export const deleteRecipeFn = async (idRecipe) => {
+  console.log(`Attempting to delete recipe with id: ${idRecipe}`);
+
   const res = await fetch(`${BACKEND_URL}/recipes/${idRecipe}`, {
     method: "DELETE",
   });
+
   if (!res.ok) {
-    throw new Error("Error deleting recipe");
+    const errorMessage = await res.text();
+    console.error(`Error deleting recipe: ${errorMessage}`);
+    throw new Error(`Error deleting recipe: ${errorMessage}`);
   }
+
+  console.log(`Recipe with id: ${idRecipe} deleted successfully`);
+  return res.json();
 };
