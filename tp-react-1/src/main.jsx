@@ -9,6 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import { RouterProvider } from 'react-router-dom'
 import { router } from './constants/routes.jsx'
+import { QueryClientProvider,QueryClient } from '@tanstack/react-query';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -17,8 +18,13 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 // Añade todos los iconos solid a la biblioteca
 library.add(fas);
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      
+    </QueryClientProvider>
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )
