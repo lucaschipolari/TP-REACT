@@ -6,15 +6,7 @@ import { Ejercicio3 } from "./exercises/Ejercicio3/ejercicio3";
 import { Ejercicio4 } from "./exercises/Ejercicio4/ejercicio4";
 
 function App() {
-  return (
-    <>
-    
-      {/* <Ejercicio1/> */}
-      {/* <Ejercicio2 mensaje='My Friend'/> */}
-      {/* <Ejercicio3 msj='My Friend' /> */}
-      {/* <Ejercicio4 /> */}
-    </>
-  );
+  return <></>;
 }
 
 export default App;

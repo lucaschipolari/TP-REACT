@@ -9,8 +9,11 @@ import { Ejercicio7View } from "../views/Ejercicio7View/ejercicio7View";
 import Ejercicio8View from "../views/Ejercicio8View/ejercicio8View";
 import { Ejercicio9View } from "../views/Ejercicio9View/ejercicio9View";
 import Ejercicio10View from "../views/Ejercicio10View/ejercicio10View";
-import  Ejercicio11View  from "../views/Ejercicio11View/ejercicio11View";
+import Ejercicio11View from "../views/Ejercicio11View/ejercicio11View";
 import Ejercicio13View from "../views/Ejercicio13View/ejercicio13View";
+import Ejercicio14View from "../views/Ejercicio14View/Ejercicio14View";
+import Eje14HomeView from "../views/Ejercicio14View/Eje14HomeView";
+import Eje14DetailView from "../views/Ejercicio14View/Eje14DetailView";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +29,10 @@ export const router = createBrowserRouter([
       { path: "/ejercicio9", element: <Ejercicio9View /> },
       { path: "/ejercicio10", element: <Ejercicio10View /> },
       { path: "/ejercicio11", element: <Ejercicio11View /> },
-     { path: "/ejercicio13", element: <Ejercicio13View /> },
+      { path: "/ejercicio13", element: <Ejercicio13View /> },
+      { path: "/ejercicio14", element: <Ejercicio14View /> },
+      { path: "/ejercicio14Home", element: <Eje14HomeView /> },
+      { path: "/ejercicio14Detail/:id", element: <Eje14DetailView /> },
     ],
   },
 ]);

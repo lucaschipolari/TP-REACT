@@ -1,0 +1,87 @@
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import React from "react";
+import { deleteRecipeFn } from "../api/recipes";
+import Swal from "sweetalert2";
+import PropTypes from "prop-types";
+import { toast } from "sonner";
+import { Link } from "react-router-dom";
+import { useRecipes } from "../stores/recipes";
+import { Button } from "react-bootstrap";
+
+const RecipeCard = (props) => {
+  const { recipe, btnStatus = true } = props;
+
+  const { setRecipeToEdit } = useRecipes();
+
+  const queryClient = useQueryClient();
+
+  const { mutate: deleteRecipe } = useMutation({
+    mutationFn: deleteRecipeFn,
+    onSuccess: () => {
+      toast.dismiss();
+      toast.success("Recipe deleted successfully!");
+      queryClient.invalidateQueries({
+        queryKey: ["recipes"],
+      });
+    },
+    onError: () => {
+      toast.dismiss();
+      toast.error("Error deleting recipe");
+    },
+  });
+
+  const handleDeleteRecipe = async () => {
+    const action = await Swal.fire({
+      title: "Are you sure?",
+      text: `You wont be able to revert this! ${recipe.id}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (action.isConfirmed) {
+      toast.loading("Deleting recipe");
+      deleteRecipe(recipe.id);
+    }
+  };
+
+  const handleToEdit = () => {
+    setRecipeToEdit(recipe);
+  };
+
+  return (
+    <div className="card col-3 mb-2 p-1">
+      <h2>{recipe.name}</h2>
+      <p>{recipe.instructions}</p>
+      <p>Tiempo de elaboración: {recipe.tiempoTotElaboracion} minutos</p>
+      <p>Ingredientes:</p>
+      <p>{recipe.ingredients}</p>
+      {btnStatus && (
+        <button onClick={handleDeleteRecipe} className="btn btn-danger mb-2">
+          Delete Recipe
+        </button>
+      )}
+      <button className="btn btn-warning mb-2" onClick={handleToEdit}>
+        Editar
+      </button>
+      <Link to={`/ejercicio14Detail/${recipe.id}`} className="btn btn-primary">
+        Más info
+      </Link>
+    </div>
+  );
+};
+
+RecipeCard.propTypes = {
+  recipe: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    instructions: PropTypes.string.isRequired,
+    tiempoTotElaboracion: PropTypes.string.isRequired,
+    ingredients: PropTypes.string.isRequired,
+  }),
+  btnStatus: PropTypes.bool,
+};
+
+export default RecipeCard;
