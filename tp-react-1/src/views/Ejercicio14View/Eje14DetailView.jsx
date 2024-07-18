@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { getRecipeFn } from "../../exercises/Ejercicio14/api/recipes";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Eje14DetailView = () => {
   const { id } = useParams();
@@ -26,6 +26,9 @@ const Eje14DetailView = () => {
         <p>Ingredientes: {recipe.ingredients}</p>
         <p>Tiempo de elaboracion: {recipe.tiempoTotElaboracion} minutos</p>
       </div>
+      <Link to="/ejercicio14Home" className="btn btn-warning mt-5">
+        Volver
+      </Link>
     </div>
   );
 };
