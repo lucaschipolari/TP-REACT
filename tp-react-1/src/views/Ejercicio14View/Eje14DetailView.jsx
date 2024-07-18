@@ -26,8 +26,12 @@ const Eje14DetailView = () => {
         <p>Ingredientes: {recipe.ingredients}</p>
         <p>Tiempo de elaboracion: {recipe.tiempoTotElaboracion} minutos</p>
       </div>
+      {}
       <Link to="/ejercicio14Home" className="btn btn-warning mt-5">
-        Volver
+        Volver a pagina de inicio
+      </Link>
+      <Link to={`/ejercicio14`} className="btn btn-primary mt-5">
+        Volver a la pagina de agregar recetas
       </Link>
     </div>
   );

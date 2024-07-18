@@ -5,9 +5,13 @@ import Swal from "sweetalert2";
 import PropTypes from "prop-types";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { useRecipes } from "../stores/recipes";
+import { Button } from "react-bootstrap";
 
 const RecipeCard = (props) => {
   const { recipe, btnStatus = true } = props;
+
+  const { setRecipeToEdit } = useRecipes();
 
   const queryClient = useQueryClient();
 
@@ -43,6 +47,10 @@ const RecipeCard = (props) => {
     }
   };
 
+  const handleToEdit = () => {
+    setRecipeToEdit(recipe);
+  };
+
   return (
     <div className="card col-3 mb-2 p-1">
       <h2>{recipe.name}</h2>
@@ -50,7 +58,14 @@ const RecipeCard = (props) => {
       <p>Tiempo de elaboración: {recipe.tiempoTotElaboracion} minutos</p>
       <p>Ingredientes:</p>
       <p>{recipe.ingredients}</p>
-      {btnStatus && <button onClick={handleDeleteRecipe}>Delete Recipe</button>}
+      {btnStatus && (
+        <button onClick={handleDeleteRecipe} className="btn btn-danger mb-2">
+          Delete Recipe
+        </button>
+      )}
+      <button className="btn btn-warning mb-2" onClick={handleToEdit}>
+        Editar
+      </button>
       <Link to={`/ejercicio14Detail/${recipe.id}`} className="btn btn-primary">
         Más info
       </Link>

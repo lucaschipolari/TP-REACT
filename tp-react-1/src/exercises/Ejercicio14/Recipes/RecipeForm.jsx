@@ -77,6 +77,14 @@ const RecipeForm = () => {
     <div className="container">
       <form onSubmit={onSubmitRHF(handleSubmit)}>
         <h2>Añadir Recetas</h2>
+        {recipeToEdit && (
+          <h3 className="">
+            Estas por editar a{" "}
+            <span className="text-danger">
+              {recipeToEdit.name.toUpperCase()}
+            </span>
+          </h3>
+        )}
 
         <InputFormat
           className="my-2"
@@ -148,22 +156,23 @@ const RecipeForm = () => {
             },
           }}
         />
-
-        {recipeToEdit && (
+        <div className="d-flex justify-content-end gap-2">
+          {recipeToEdit && (
+            <div className="d-flex justify-content-end">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={handleCancelEdit}
+              >
+                Cancelar edicion
+              </button>
+            </div>
+          )}
           <div className="d-flex justify-content-end">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={handleCancelEdit}
-            >
-              Cancel edicion
+            <button type="submit" className="btn btn-success">
+              Add Recipe
             </button>
           </div>
-        )}
-        <div className="d-flex justify-content-end">
-          <button type="submit" className="btn btn-success">
-            Add Recipe
-          </button>
         </div>
       </form>
       <div>
