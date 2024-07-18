@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { toast } from "sonner";
 
 const RecipeCard = (props) => {
-  const { recipe } = props;
+  const { recipe, btnStatus = true } = props;
 
   const queryClient = useQueryClient();
 
@@ -49,7 +49,7 @@ const RecipeCard = (props) => {
       <p>Tiempo de elaboración: {recipe.tiempoTotElaboracion} minutos</p>
       <p>Ingredientes:</p>
       <p>{recipe.ingredients}</p>
-      <button onClick={handleDeleteRecipe}>Delete Recipe</button>
+      {btnStatus && <button onClick={handleDeleteRecipe}>Delete Recipe</button>}
     </div>
   );
 };
@@ -62,6 +62,7 @@ RecipeCard.propTypes = {
     tiempoTotElaboracion: PropTypes.string.isRequired,
     ingredients: PropTypes.string.isRequired,
   }),
+  btnStatus: PropTypes.bool,
 };
 
 export default RecipeCard;

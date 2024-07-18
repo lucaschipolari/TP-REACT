@@ -61,6 +61,9 @@ export const NavbarMain = () => {
               <NavDropdown.Item href="/ejercicio14">
                 Ejercicio 14
               </NavDropdown.Item>
+              <NavDropdown.Item href="/ejercicio14Home">
+                Ejercicio 14 Home
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
