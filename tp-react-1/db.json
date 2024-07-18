@@ -1,0 +1,18 @@
+{
+  "recipes": [
+    {
+      "id": "3fbf",
+      "name": "ultimareceta",
+      "instructions": "nuevainsgruccioncaasdf",
+      "tiempoTotElaboracion": "05:05",
+      "ingredients": "zanahoria manzana"
+    },
+    {
+      "id": "7c31",
+      "name": "nueva receta",
+      "instructions": "muchas instrucciones",
+      "tiempoTotElaboracion": "12:05",
+      "ingredients": "muchos ingredientes"
+    }
+  ]
+}
