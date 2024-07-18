@@ -4,6 +4,7 @@ import { deleteRecipeFn } from "../api/recipes";
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 const RecipeCard = (props) => {
   const { recipe, btnStatus = true } = props;
@@ -50,6 +51,9 @@ const RecipeCard = (props) => {
       <p>Ingredientes:</p>
       <p>{recipe.ingredients}</p>
       {btnStatus && <button onClick={handleDeleteRecipe}>Delete Recipe</button>}
+      <Link to={`/ejercicio14Detail/${recipe.id}`} className="btn btn-primary">
+        Más info
+      </Link>
     </div>
   );
 };
