@@ -31,7 +31,7 @@ const FormWeather = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={onSubmitRHF(handleSubmit)}>
         <InputFormat
           name="city"
@@ -69,6 +69,7 @@ const FormWeather = () => {
 
         <button type="submit">Enviar</button>
       </form>
+
       {isLoading && <p>Loading...</p>}
       {isError && <p>hubo un error</p>}
       {weather && <CardWeather data={weather} />}

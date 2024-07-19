@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 const CardWeather = (props) => {
   const { data } = props;
   return (
-    <div>
+    <div className="card d-flex justify-content-center align-items-center">
       <h2>{data.name}</h2>
-      <p>{data.description}</p>
+      <p className="card-title">{data.description}</p>
       <img
+        className="w-25"
         src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
         alt={data.weather[0].description}
       />
